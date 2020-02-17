@@ -15,6 +15,8 @@ if filereadable(expand("/etc/vim/vimrc.bundles"))
   source /etc/vim/vimrc.bundles
 endif
 
+let $RUBYHOME=$HOME."/.rvm/rubies/default"
+set rubydll=$HOME/.rvm/rubies/default/lib/libruby.dylib
 
 " ========= Options ========
 
@@ -126,14 +128,6 @@ nnoremap <Leader>ss :SideSearch <C-r><C-w><CR> | wincmd p
 " SS shortcut and return to original window
  command! -complete=file -nargs=+ SS execute 'SideSearch <args>'
 " }}}
-
-let g:ale_enabled = 0                     " Disable linting by default
-let g:ale_lint_on_text_changed = 'normal' " Only lint while in normal mode
-let g:ale_lint_on_insert_leave = 1        " Automatically lint when leaving insert mode
-
-let g:ale_linters = {
-\   'java': []
-\ }
 
 let html_use_css=1
 let html_number_lines=0
